@@ -1,0 +1,239 @@
+.order-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.18s, border-color 0.18s;
+    position: relative;
+    gap: 18px;
+    min-height: 70px;
+}
+
+.order-item:hover {
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+    border-color: #ddd;
+}
+
+.order-item--selected {
+    border-color: #ccc;
+    background: #f9f9f9;
+}
+
+/* Full mode */
+.order-item__title {
+    flex: 2;
+    font-size: 14px;
+    color: #4a90d9;
+    font-weight: 400;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.order-item__products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    gap: 1px;
+}
+
+.order-item__products-icon {
+    line-height: 0;
+}
+
+.order-item__count {
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.1;
+}
+
+.order-item__count-label {
+    font-size: 10px;
+    color: #aaa;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+.order-item__dates {
+    min-width: 115px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.order-item__date-short {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.order-item__date-long {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.order-item__price {
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.order-item__price-usd {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.order-item__price-uah {
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+.order-item__no-price {
+    font-size: 13px;
+    color: #ccc;
+}
+
+.order-item__arrow {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.order-item__delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    color: #4a90d9;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.order-item__delete-btn:hover {
+    background: #eef4fc;
+    color: #3577c0;
+}
+
+/* Compact mode (when detail panel is open) */
+.order-item--compact {
+    padding: 12px 14px;
+    gap: 0;
+    min-height: 56px;
+    border-radius: 8px;
+}
+
+.order-item--compact.order-item--selected {
+    border-color: #5fb346;
+    border-left-width: 3px;
+}
+
+.order-item__compact-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.order-item__compact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.order-item__compact-dates {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    margin-left: auto;
+    padding-right: 8px;
+}
+
+.order-item--compact .order-item__date-short {
+    font-size: 10px;
+}
+
+.order-item--compact .order-item__date-long {
+    font-size: 12px;
+}
+
+.order-item--compact .order-item__arrow {
+    margin-left: 4px;
+}
+
+@media (max-width: 1199px) {
+    .order-item {
+        display: grid;
+        grid-template-columns: min-content 1fr max-content min-content;
+        grid-template-areas:
+            "title title title title"
+            "products dates price delete";
+        align-items: center;
+        gap: 12px 16px;
+        padding: 20px 16px;
+    }
+
+    .order-item--compact {
+        grid-template-columns: 1fr max-content;
+        grid-template-areas:
+            "left dates"
+            "arrow arrow";
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .order-item__title {
+        grid-area: title;
+        font-size: 15px;
+        font-weight: 500;
+        white-space: normal;
+        line-height: 1.4;
+        margin-bottom: 4px;
+    }
+
+    .order-item__products {
+        grid-area: products;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .order-item__dates {
+        grid-area: dates;
+        align-items: flex-start;
+    }
+
+    .order-item__price {
+        grid-area: price;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .order-item__arrow {
+        display: none;
+        /* Hide the right arrow on mobile full layout to save space, or rely on active state border */
+    }
+
+    .order-item__delete-btn {
+        grid-area: delete;
+        margin: 0;
+        padding: 8px;
+    }
+}

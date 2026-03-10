@@ -1,0 +1,110 @@
+.nav-sidebar {
+    width: 160px;
+    min-height: 100vh;
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0 16px;
+    position: sticky;
+    top: 56px;
+    height: calc(100vh - 56px);
+    flex-shrink: 0;
+}
+
+.nav-sidebar__avatar-wrap {
+    position: relative;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+.nav-sidebar__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-sidebar__settings-icon {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: #fff;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+}
+
+.nav-sidebar__link {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #888;
+    text-decoration: none;
+    padding: 9px 0;
+    width: 100%;
+    text-align: center;
+    transition: color 0.2s;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-sidebar__link:hover {
+    color: #5fb346;
+}
+
+.nav-sidebar__link--active {
+    color: #333;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+}
+
+.nav-sidebar__link--disabled {
+    cursor: default;
+    color: #aaa;
+}
+
+.nav-sidebar__link--disabled:hover {
+    color: #aaa;
+}
+
+.nav-sidebar__lang {
+    margin-top: auto;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    color: #888;
+    transition: background 0.2s;
+}
+
+.nav-sidebar__lang:hover {
+    background: #f4f4f4;
+}
+
+@media (max-width: 1199px) {
+    .nav-sidebar {
+        display: none;
+    }
+}

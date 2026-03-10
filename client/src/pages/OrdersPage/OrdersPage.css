@@ -1,0 +1,134 @@
+.orders-page {
+    flex: 1;
+    padding: 28px 28px 28px;
+}
+
+.orders-page__header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+}
+
+.orders-page__add-btn {
+    background: #5fb346;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.18s, transform 0.25s;
+}
+
+.orders-page__add-btn:hover {
+    background: #4da337;
+    transform: rotate(90deg);
+}
+
+.orders-page__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.orders-page__title span {
+    color: #888;
+}
+
+.orders-page__loading {
+    display: flex;
+    justify-content: center;
+    padding: 48px;
+}
+
+.orders-page__spinner {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 3px solid #e8e8e8;
+    border-top-color: #5fb346;
+    border-radius: 50%;
+    animation: ordersPageSpin 0.75s linear infinite;
+}
+
+@keyframes ordersPageSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.orders-page__body {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* List section */
+.orders-page__list-wrap {
+    flex: 1;
+    min-width: 0;
+    transition: flex 0.3s ease, max-width 0.3s ease;
+}
+
+.orders-page__list-wrap--narrow {
+    flex: 0 0 340px;
+    max-width: 340px;
+}
+
+/* Detail / Chart section */
+.orders-page__detail-wrap,
+.orders-page__chart-wrap {
+    flex: 1;
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.orders-page__empty {
+    color: #bbb;
+    font-size: 14px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+@media (max-width: 1199px) {
+    .orders-page__body {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .orders-page__list-wrap {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .orders-page__list-wrap--narrow {
+        min-width: 100%;
+        max-width: 100%;
+        flex: auto;
+        margin-bottom: 24px;
+    }
+
+    .orders-page__detail-wrap,
+    .orders-page__chart-wrap {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .orders-page__chart-wrap {
+        display: none;
+        /* Hide chart on mobile */
+    }
+
+    .orders-page__detail-wrap {
+        position: absolute;
+        /* Takes it out of document flex flow */
+        height: 0;
+        overflow: visible;
+        width: 0;
+    }
+}

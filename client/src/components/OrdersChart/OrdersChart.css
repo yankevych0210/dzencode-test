@@ -1,0 +1,62 @@
+.orders-chart {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.orders-chart__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 0 0 16px;
+}
+
+.orders-chart__wrap {
+    margin-bottom: 16px;
+}
+
+.orders-chart__tooltip {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.orders-chart__tooltip-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.orders-chart__summary {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.orders-chart__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.orders-chart__row-name {
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%;
+}
+
+.orders-chart__row-count {
+    color: #5fb346;
+    font-weight: 600;
+    white-space: nowrap;
+}
