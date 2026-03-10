@@ -14,6 +14,11 @@ export const deleteOrderAsync = createAsyncThunk('orders/delete', async (id: num
     return id;
 });
 
+export const addOrderAsync = createAsyncThunk('orders/add', async (payload: { title: string; description: string }) => {
+    const res = await axios.post<Order>(`${API_URL}/api/orders`, payload);
+    return res.data;
+});
+
 interface OrdersState {
     items: Order[];
     selectedOrderId: number | null;
@@ -69,6 +74,9 @@ const ordersSlice = createSlice({
                     state.selectedOrderId = null;
                 }
                 state.deleteModalOrderId = null;
+            })
+            .addCase(addOrderAsync.fulfilled, (state, action) => {
+                state.items.push(action.payload);
             });
     }
 });

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
-import { closeAddModal } from '../../store/slices/ordersSlice';
+import { closeAddModal, addOrderAsync } from '../../store/slices/ordersSlice';
 import './AddModal.css';
 
 const AddOrderModal: React.FC = () => {
@@ -19,6 +19,7 @@ const AddOrderModal: React.FC = () => {
 
         setLoading(true);
         try {
+            await dispatch(addOrderAsync({ title, description })).unwrap();
             dispatch(closeAddModal());
             setTitle('');
             setDescription('');

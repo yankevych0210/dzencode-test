@@ -162,6 +162,17 @@ app.delete('/api/orders/:id', (req, res) => {
   res.json({ success: true });
 });
 
+app.post('/api/orders', (req, res) => {
+  const newOrder = {
+    ...req.body,
+    id: Date.now(),
+    date: new Date().toISOString().replace('T', ' ').substring(0, 19),
+    get products() { return products }
+  };
+  orders.push(newOrder);
+  res.json(JSON.parse(JSON.stringify(newOrder)));
+});
+
 app.get('/api/products', (req, res) => {
   res.json(products);
 });
