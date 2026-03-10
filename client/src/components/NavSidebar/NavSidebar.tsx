@@ -5,7 +5,7 @@ import { storage } from '../../utils/storage';
 import './NavSidebar.css';
 
 const NavSidebar: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const [avatar, setAvatar] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
 

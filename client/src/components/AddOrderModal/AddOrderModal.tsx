@@ -3,11 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
-import { closeAddModal, fetchOrders } from '../../store/slices/ordersSlice';
-import axios from 'axios';
+import { closeAddModal } from '../../store/slices/ordersSlice';
 import './AddModal.css';
-
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 const AddOrderModal: React.FC = () => {
     const dispatch = useAppDispatch();
