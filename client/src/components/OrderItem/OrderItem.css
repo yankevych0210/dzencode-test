@@ -204,6 +204,7 @@
         font-size: 15px;
         font-weight: 500;
         white-space: normal;
+        word-break: break-word;
         line-height: 1.4;
         margin-bottom: 4px;
     }
@@ -213,17 +214,20 @@
         align-items: center;
         flex-direction: column;
         justify-content: center;
+        min-width: 0;
     }
 
     .order-item__dates {
         grid-area: dates;
         align-items: flex-start;
+        min-width: 0;
     }
 
     .order-item__price {
         grid-area: price;
         align-items: flex-end;
         text-align: right;
+        min-width: 0;
     }
 
     .order-item__arrow {
